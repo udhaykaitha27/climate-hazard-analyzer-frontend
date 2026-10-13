@@ -51,7 +51,7 @@ export default function App() {
     setLoading(true);
     setError(null);
     try {
-      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://127.0.0.1:8000";
       // Update your fetch call to:
       const res = await fetch(
         `${BACKEND_URL}/api/analyze?lat=${position[0]}&lon=${position[1]}&start_year=${startYear}&end_year=${endYear}&hazard_type=${hazardType}`,
